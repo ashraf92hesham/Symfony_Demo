@@ -1,0 +1,2 @@
+i went through the documentation to understand how controllers and routing are working, i tried to add a new controller to the symfony demo app and route to it but i faced a problem which is attached to that email, i seareched and tried with it too much but with no result , today i tried to do the same but inside a new created symfony not the downloaded demo one , and what made me surprised that the code worked fine , i tried to know a reason for that but with no result too. 
+ ---- > not solved but working without the symfony demo app works fine with me
