@@ -1,0 +1,17 @@
+ShoppingCart\ShoppingCartBundle\Entity\ShoppingCart:
+    type: entity
+    table: ShoppingCart
+    repositoryClass: ShoppingCart\ShoppingCartBundle\Entity\ShoppingCartRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        cart_type:
+            type: string
+            length: 100
+        product_id:
+            type: integer
+    lifecycleCallbacks: {  }

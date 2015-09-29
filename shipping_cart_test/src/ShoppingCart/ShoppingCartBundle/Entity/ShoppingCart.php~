@@ -1,0 +1,28 @@
+<?php
+
+namespace ShoppingCart\ShoppingCartBundle\Entity;
+
+/**
+ * ShoppingCart
+ */
+class ShoppingCart
+{
+    /**
+     * @var integer
+     */
+    private $id;
+    protected $cart_type;
+    protected $product_id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}
+
