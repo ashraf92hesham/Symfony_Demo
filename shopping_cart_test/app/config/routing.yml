@@ -1,3 +1,8 @@
+base_cart:
+    resource: "@BaseCartBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 shopping_cart_shopping_cart:
     resource: "@ShoppingCartShoppingCartBundle/Resources/config/routing.yml"
     prefix:   /

@@ -1,0 +1,96 @@
+<?php
+
+namespace BaseCartBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * BaseShoppingCartEntity
+ *
+ * @ORM\Table()
+ * @ORM\Entity(repositoryClass="BaseCartBundle\Entity\BaseShoppingCartEntityRepository")
+ */
+class BaseShoppingCartEntity
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+    * @var string
+    *
+    * @ORM\Column(name="cart_type", type="string")
+    */
+    private $cart_type;
+
+    /**
+    * @var array
+    *
+    * @ORM\Column(name="products_ids", type="array")
+    */
+    private $products_ids;
+
+
+    /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set cartType
+     *
+     * @param integer $cartType
+     *
+     * @return BaseShoppingCartEntity
+     */
+    public function setCartType($cartType)
+    {
+        $this->cart_type = $cartType;
+
+        return $this;
+    }
+
+    /**
+     * Get cartType
+     *
+     * @return integer
+     */
+    public function getCartType()
+    {
+        return $this->cart_type;
+    }
+
+    /**
+     * Set productsIds
+     *
+     * @param array $productsIds
+     *
+     * @return BaseShoppingCartEntity
+     */
+    public function setProductsIds($productsIds)
+    {
+        $this->products_ids = $productsIds;
+
+        return $this;
+    }
+
+    /**
+     * Get productsIds
+     *
+     * @return array
+     */
+    public function getProductsIds()
+    {
+        return $this->products_ids;
+    }
+}

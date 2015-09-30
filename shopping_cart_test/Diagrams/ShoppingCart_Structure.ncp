@@ -1,0 +1,132 @@
+<Project>
+  <Name>ShoppingCart_Structure</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Untitled</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>BaseCart</Name>
+        <Access>Public</Access>
+        <Location left="216" top="17" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">protected string cart_type</Member>
+        <Member type="Field">protected int[] products_ids</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public void setProductsIds()</Member>
+        <Member type="Method">public int[] getProductsIds()</Member>
+        <Member type="Method">public void setCartType()</Member>
+        <Member type="Method">public string getCartType()</Member>
+        <Member type="Method">public void emptyCart()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ShopCart</Name>
+        <Access>Public</Access>
+        <Location left="44" top="316" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">protected string cart_type</Member>
+        <Member type="Field">protected int[] products_ids</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public void setProductsIds()</Member>
+        <Member type="Method">public int[] getProductsIds()</Member>
+        <Member type="Method">public void setCartType()</Member>
+        <Member type="Method">public string getCartType()</Member>
+        <Member type="Method">public void emptyCart()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WishListCart</Name>
+        <Access>Public</Access>
+        <Location left="366" top="316" />
+        <Size width="162" height="230" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">protected string cart_type</Member>
+        <Member type="Field">protected int[] products_ids</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public void setProductsIds()</Member>
+        <Member type="Method">public int[] getProductsIds()</Member>
+        <Member type="Method">public void setCartType()</Member>
+        <Member type="Method">public string getCartType()</Member>
+        <Member type="Method">public void emptyCart()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>BaseProduct</Name>
+        <Access>Public</Access>
+        <Location left="678" top="15" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">protected string name</Member>
+        <Member type="Field">protected string color</Member>
+        <Member type="Field">protected string description</Member>
+        <Member type="Field">protected string product_type</Member>
+        <Member type="Field">protected BaseCart shopping_cart</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public string getName()</Member>
+        <Member type="Method">public string getColor()</Member>
+        <Member type="Method">public string getDescription()</Member>
+        <Member type="Method">public string getProductType()</Member>
+        <Member type="Method">public void setName()</Member>
+        <Member type="Method">public void setColor()</Member>
+        <Member type="Method">public void setDescription()</Member>
+        <Member type="Method">public void setProductType()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>SaleProduct</Name>
+        <Access>Public</Access>
+        <Location left="984" top="15" />
+        <Size width="162" height="332" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private int id</Member>
+        <Member type="Field">protected string name</Member>
+        <Member type="Field">protected string color</Member>
+        <Member type="Field">protected string description</Member>
+        <Member type="Field">protected string product_type</Member>
+        <Member type="Field">protected BaseCart shopping_cart</Member>
+        <Member type="Method">public int getId()</Member>
+        <Member type="Method">public string getName()</Member>
+        <Member type="Method">public string getColor()</Member>
+        <Member type="Method">public string getDescription()</Member>
+        <Member type="Method">public string getProductType()</Member>
+        <Member type="Method">public void setName()</Member>
+        <Member type="Method">public void setColor()</Member>
+        <Member type="Method">public void setDescription()</Member>
+        <Member type="Method">public void setProductType()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>297</X>
+          <Y>276</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Generalization" first="4" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Association" first="3" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
