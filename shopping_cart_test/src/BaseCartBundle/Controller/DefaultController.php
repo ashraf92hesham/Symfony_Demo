@@ -39,7 +39,8 @@ class DefaultController extends Controller
 		$cartManager->persist($cart);
 		$cartManager->flush();
 
-		return new Response('Cart '.$cart->getCartType().' added to database');
+		// return new Response('Cart '.$cart->getCartType().' added to database');
+		return $this->render('/addcart.html.twig', array("cart_type"=> $cart->getCartType(), "title"=> 'Add New Cart'));
     }
 
 
@@ -72,7 +73,8 @@ class DefaultController extends Controller
 		$productManager->persist($product);
 		$productManager->flush();
 
-		return new Response('Product '.$product->getName().' added to database'	);
+		// return new Response('Product '.$product->getName().' added to database'	);
+		return $this->render('/addproduct.html.twig', array("product_name"=> $product->getName(), "title"=> 'Add New Product'));
 	}
 
 	// action for showing products
@@ -89,7 +91,8 @@ class DefaultController extends Controller
             'No product found with id '.$product_id);
 		}
 		else{
-			return new Response('Product '.$product->getName().' found.');
+			// return new Response('Product '.$product->getName().' found.');
+			return $this->render('/showproduct.html.twig', array("product_id"=> $product_id, "title"=>'Show Product'));
 		}
 	}
 
@@ -130,7 +133,9 @@ class DefaultController extends Controller
 				$products_ids_str = implode(",", $cart->getProductsIds());
 
 				// return new Response('Cart with id # '.$cart->getId().' have products '.$products_ids_str);
-				return $this->render('/addtocart.html.twig', array("cart_type"=> $cart->getCartType(), "products"=>$cart->getProductsIds()));
+				return $this->render('/addtocart.html.twig', array("cart_type"=> $cart->getCartType(), 
+																"products"=>$cart->getProductsIds(),
+																"title"=>'Add To Cart'));
 			}
 		}
 	}
