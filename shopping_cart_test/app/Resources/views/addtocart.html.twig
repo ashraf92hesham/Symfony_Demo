@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add To Cart</title>
+    </head>
+    <body>
+        <ul>
+            {% for product in products %}
+                <li>Product With ID # {{ product }} Is Now In {{ cart_type }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>

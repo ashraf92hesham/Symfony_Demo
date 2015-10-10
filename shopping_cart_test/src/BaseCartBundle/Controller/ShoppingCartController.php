@@ -4,6 +4,7 @@ namespace BaseCartBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 
 use BaseCartBundle\Entity\BaseShoppingCartEntity;
 use BaseCartBundle\Entity\BaseProductEntity;
@@ -36,6 +37,21 @@ class SHoppingCartController extends Controller{
 		$manager->flush();
 
 		return new Response('Product '.$product_name.' Added to '.$shopping_cart->getCaryType());
+	}
+
+	/**
+	* @Route("/add/product/{product_name}")
+	*/
+
+	function addProductAction($product_name){
+		$product = new BaseProductEntity($product_name, 'Red');
+
+		$manager = $this->getDoctrine()->getManager();
+		
+		$manager->persist($product);
+		$manager->flush();
+
+		return new Response('Product '.$product_name.' added to database');
 	}
 }
 

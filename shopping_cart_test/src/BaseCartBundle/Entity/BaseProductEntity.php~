@@ -7,12 +7,13 @@ use BaseCartBundle\Entity\BaseShoppingCartEntity;
 
 /**
  * BaseProductEntity
- *
- * @ORM\Table()
- * @ORM\Entity(repositoryClass="BaseCartBundle\Entity\BaseProductEntityRepository")
+ * @ORM\Entity
+ * @ORM\Table(name="base_product_entity")
  */
 class BaseProductEntity
 {
+
+
     /**
      * @var integer
      *
@@ -57,6 +58,13 @@ class BaseProductEntity
     */
     private $shopping_cart_id;
 
+
+    function _construct($name, $color){
+        $this->name = $name;
+        $this->color = $olor;
+        // $this->shopping_cart_id = $cart_id; 
+    }
+
     /**
      * Get id
      *
@@ -66,4 +74,126 @@ class BaseProductEntity
     {
         return $this->id;
     }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     *
+     * @return BaseProductEntity
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * Set color
+     *
+     * @param string $color
+     *
+     * @return BaseProductEntity
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
+
+        return $this;
+    }
+
+    /**
+     * Get color
+     *
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     *
+     * @return BaseProductEntity
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set productType
+     *
+     * @param string $productType
+     *
+     * @return BaseProductEntity
+     */
+    public function setProductType($productType)
+    {
+        $this->product_type = $productType;
+
+        return $this;
+    }
+
+    /**
+     * Get productType
+     *
+     * @return string
+     */
+    public function getProductType()
+    {
+        return $this->product_type;
+    }
+
+    /**
+     * Set shoppingCartId
+     *
+     * @param integer $shoppingCartId
+     *
+     * @return BaseProductEntity
+     */
+    public function setShoppingCartId($shoppingCartId)
+    {
+        $this->shopping_cart_id = $shoppingCartId;
+
+        return $this;
+    }
+
+    /**
+     * Get shoppingCartId
+     *
+     * @return integer
+     */
+    public function getShoppingCartId()
+    {
+        return $this->shopping_cart_id;
+    }
 }
+
+class SaleProductEntity extends BaseProductEntity{}

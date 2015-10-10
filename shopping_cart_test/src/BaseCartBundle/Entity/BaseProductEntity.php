@@ -7,8 +7,7 @@ use BaseCartBundle\Entity\BaseShoppingCartEntity;
 
 /**
  * BaseProductEntity
- *
- * @ORM\Table()
+ * @ORM\Table(name="base_product_entity")
  * @ORM\Entity(repositoryClass="BaseCartBundle\Entity\BaseProductEntityRepository")
  */
 class BaseProductEntity
@@ -60,11 +59,11 @@ class BaseProductEntity
     private $shopping_cart_id;
 
 
-    function _construct($name, $color, $cart_id){
-        $this->name = $name;
-        $this->color = $olor;
-        $this->shopping_cart_id = $cart_id; 
-    }
+    // function _construct($name, $color){
+    //     $this->name = $name;
+    //     $this->color = $color;
+    //     // $this->shopping_cart_id = $cart_id; 
+    // }
 
     /**
      * Get id

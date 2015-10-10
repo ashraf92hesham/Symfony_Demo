@@ -10,7 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="BaseCartBundle\Entity\BaseShoppingCartEntityRepository")
  */
-abstract class BaseShoppingCartEntity
+ class BaseShoppingCartEntity
 {
     /**
      * @var integer
@@ -77,9 +77,9 @@ abstract class BaseShoppingCartEntity
      *
      * @return BaseShoppingCartEntity
      */
-    public function setProductsIds($productsIds)
+    public function setProductsIds($product_id)
     {
-        $this->products_ids = $productsIds;
+        $this->products_ids[] = $product_id;
 
         return $this;
     }
@@ -94,32 +94,32 @@ abstract class BaseShoppingCartEntity
         return $this->products_ids;
     }
 
-    abstract protected function emptyCart($thisp->roducts_ids); // this should be implemented depends on how the children will empty the cart 
+    // abstract protected function emptyCart($products_ids); // this should be implemented depends on how the children will empty the cart 
 }
 
 // this is the first child of BaseShopingCart , its implemented emptyCart() saves the products_ids..
 // in case that user would like to get them back in his cart.
 // this implementation is just a show case of implementing an abstract method.
-class ShopCartEntity extends BaseShoppingCartEntity{
+// class ShopCartEntity extends BaseShoppingCartEntity{
 
-    /**
-    * @var array
-    *
-    * @ORM\Column(name="deleted_products_ids", type="array")
-    */
-    private deleted_products_ids;
-    public function emptyCart($this->products_ids){
-        $this->deleted_products_ids = $this->products_ids;
-        $this->products_ids = [];
-    }
-}
+//     /**
+//     * @var array
+//     *
+//     * @ORM\Column(name="deleted_products_ids", type="array")
+//     */
+//     private $deleted_products_ids;
+//     public function emptyCart($products_ids){
+//         $this->deleted_products_ids = $this->products_ids;
+//         $this->products_ids = [];
+//     }
+// }
 
 // this is the second child of BaseShopingCart , its implemented emptyCart() DON'T save the products_ids..
 // it just removes them.
 // this implementation is just a show case of implementing an abstract method.
-class WishListCartEntity extends BaseShoppingCartEntity{
+// class WishListCartEntity extends BaseShoppingCartEntity{
 
-    public function emptyCart($this->products_ids){
-        $this->products_ids = [];
-    }
-}
+//     public function emptyCart($products_ids){
+//         $this->products_ids = [];
+//     }
+// }
