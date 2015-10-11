@@ -1,4 +1,0 @@
-services:
-#    shopping_cart_shopping_cart.example:
-#        class: ShoppingCart\ShoppingCartBundle\Example
-#        arguments: [@service_id, "plain_value", %parameter%]
